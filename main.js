@@ -20,7 +20,7 @@ function createWindow() {
     width: 800,
     height: 600,
     title: "Animaux",
-    icon: "assets/logo.png",
+    icon: "assets/icon.ico",
     webPreferences: {
       contextIsolation: true,
       preload: path.join(__dirname, "./preload.js"),
