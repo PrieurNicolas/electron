@@ -8,6 +8,9 @@ const fetch = (...args) =>
 const axios = require("axios");
 const got = (...args) => import("got").then(({ default: got }) => got(...args));
 const { dialog } = require("electron");
+require('update-electron-app')({
+  updateInterval: '1 hour',
+})
 
 var mainWindow;
 let icounter = 0;
