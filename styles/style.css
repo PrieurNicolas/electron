@@ -1,0 +1,22 @@
+.load{
+    max-height: 796px;
+    max-width: 796px;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.imageee{
+    border-radius: 8px;
+    width: 800px;
+    height: 800px;
+    border:2px solid gray;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+}
+
+.txt{
+    visibility: hidden;
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/micromodal.css" />
+    <link rel="stylesheet" href="../../styles/style.css"/>
+
+    <!-- Insert this line above script imports  -->
+    <script>
+      if (typeof module === "object") {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
+    <!-- normal script imports etc  -->
+    <script src="../../viewscripts/lib/jquery.3.6.0.js"></script>
+    <script src="../../viewscripts/lib/micromodal.min.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>
+      if (window.module) module = window.module;
+    </script>
+  </head>
+
+  <body>
+    
+
+      <div class="container">
+        <h1 class="title">Générateur d'images d'animaux</h1>
+          <div>
+            <button onClick="javascript:recup()">Chien</button>
+            <button onClick="javascript:shiba()">Shiba</button>
+            <button onClick="javascript:canard()">Canard</button>
+            <button onClick="javascript:fox()">Renard</button>
+            <button onClick="javascript:cat()">Chat</button>
+          </div>
+
+          <div class="imageee">
+            <div id="chargement"></div>   
+          </div>
+
+          <div id="fact"></div>
+          <div class="txt" id="whattodo"></div>
+<!-- ============================================ -->
+          <script>
+            async function recup() {
+              await doSomething();
+              const pp = document.getElementById("whattodo").innerHTML;
+              const imagetest = `<object class="load" data=${pp}>`;
+              const affiche = document.getElementById("chargement");
+              affiche.innerHTML = imagetest;
+
+
+              const url = 'https://dogapi.dog/api/facts';
+              fetch(url)
+              .then((resp) => resp.json())
+              .then(function(data) {
+              let authors = data.facts[0];
+              const pp = document.getElementById("whattodo").innerHTML;
+              const imagetest = `<p>${authors}</p>`;
+              const affiche = document.getElementById("fact");
+              affiche.innerHTML = imagetest;
+              })
+              .catch(function(error) {
+                console.log(error);
+              });
+            }
+          </script>
+<!-- ============================================ -->
+          <script>
+            async function shiba() {
+              function createNode(element) {
+              return document.createElement(element);
+          }
+
+          function append(parent, el) {
+            return parent.appendChild(el);
+          }
+
+          const url = 'https://shibe.online/api/shibes';
+          fetch(url)
+          .then((resp) => resp.json())
+          .then(function(data) {
+            let authors = data[0];
+          const pp = document.getElementById("whattodo").innerHTML;
+              const imagetest = `<object class="load" data=${authors}>`;
+              const affiche = document.getElementById("chargement");
+              affiche.innerHTML = imagetest;
+              const fact = document.getElementById("fact");
+                        fact.innerHTML = "";
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+
+            }
+          </script>
+<!-- ============================================ -->
+          <script>
+            async function canard() {
+              function createNode(element) {
+              return document.createElement(element);
+          }
+
+          function append(parent, el) {
+            return parent.appendChild(el);
+          }
+
+          const url = 'https://random-d.uk/api/random';
+          fetch(url)
+          .then((resp) => resp.json())
+          .then(function(data) {
+            let authors = data.url;
+          const pp = document.getElementById("whattodo").innerHTML;
+              const imagetest = `<object class="load" data=${authors}>`;
+              const affiche = document.getElementById("chargement");
+              affiche.innerHTML = imagetest;
+              const fact = document.getElementById("fact");
+                        fact.innerHTML = "";
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+
+            }
+          </script>
+<!-- ============================================ -->
+          <script>
+            async function fox() {
+              function createNode(element) {
+              return document.createElement(element);
+          }
+
+          function append(parent, el) {
+            return parent.appendChild(el);
+          }
+
+          const url = 'https://randomfox.ca/floof/';
+          fetch(url)
+          .then((resp) => resp.json())
+          .then(function(data) {
+            let authors = data.image;
+          const pp = document.getElementById("whattodo").innerHTML;
+              const imagetest = `<object class="load" data=${authors}>`;
+              const affiche = document.getElementById("chargement");
+              affiche.innerHTML = imagetest;
+              const fact = document.getElementById("fact");
+                        fact.innerHTML = "";
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+
+            }
+          </script>
+<!-- ============================================ -->
+          <script>
+            async function cat() {
+              function createNode(element) {
+              return document.createElement(element);
+          }
+
+          function append(parent, el) {
+            return parent.appendChild(el);
+          }
+
+          const url = 'https://aws.random.cat/meow';
+          fetch(url)
+          .then((resp) => resp.json())
+          .then(function(data) {
+            let authors = data.file;
+          const pp = document.getElementById("whattodo").innerHTML;
+              const imagetest = `<object class="load" data=${authors}>`;
+              const affiche = document.getElementById("chargement");
+              affiche.innerHTML = imagetest;
+              const fact = document.getElementById("fact");
+                        fact.innerHTML = "";
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+
+            }
+          </script>
+<!-- ============================================ -->
+        </div>
+      </div>
+
+
+    <!-- You can also require other files to run in this process -->
+    <script defer src="../../viewscripts/home/index.js"></script>
+  </body>
+</html>
